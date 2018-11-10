@@ -12,7 +12,6 @@ const Header = props => (
 		/>
 		<Image
 			style={ style.house }
-			width={ Dimensions.get('window').width }
 			source={ props.house }
 			resizeMode="contain"
 		/>
