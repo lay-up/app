@@ -32,6 +32,7 @@ const Info = props => (
 			</Text>
 		</View>
 		<View style={ style.borderWrapper }>
+			<View style={ style.point }/>
 			<View style={ !props.month ? style.lastBorder : style.middleBorder }/>
 		</View>
 	</View>

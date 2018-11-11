@@ -71,10 +71,12 @@ const style = StyleSheet.create({
 		alignSelf: 'flex-end'
 	},
 	borderWrapper: {
+		position: 'relative',
 		display: 'flex',
 		alignItems: 'flex-start',
+		justifyContent: 'center',
 		width: '100%',
-		marginTop: height / 35,
+		marginTop: height / 10,
 		height: 2 / PixelRatio.get(),
 	},
 	lastBorder: {
@@ -87,6 +89,17 @@ const style = StyleSheet.create({
 		backgroundColor: colors.white,
 		height: '100%',
 		width: '100%'
+	},
+	point: {
+		position: 'absolute',
+		left: '50%',
+		width: height / 30,
+		height: height / 30,
+		backgroundColor: colors.white,
+		borderRadius: height / 15,
+		transform: [
+			{ translateX: height / -60 }
+		]
 	}
 })
 
