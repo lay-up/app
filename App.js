@@ -2,7 +2,7 @@ import React from 'react'
 import { View, StatusBar, Platform } from 'react-native'
 import colors from 'values/colors'
 
-import Resume from 'resume/resume'
+import Main from 'main'
 
 export default class App extends React.Component {
 	render() {
@@ -12,7 +12,7 @@ export default class App extends React.Component {
 					backgroundColor={ colors.green }
 					barStyle={ Platform.OS === 'android' ? 'default' : 'light-content' }
 				/>
-				<Resume/>
+				<Main/>
 			</View>
 		)
 	}

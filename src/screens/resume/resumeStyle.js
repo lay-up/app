@@ -9,7 +9,9 @@ const style = StyleSheet.create({
 		backgroundColor: colors.green
 	},
 	sky: { 
-		flex: 0.618
+		flex: 0.618,
+		alignItems: 'center',
+		justifyContent: 'center'
 	},
 	house: {
 		flex: 0.382,
@@ -28,11 +30,10 @@ const style = StyleSheet.create({
 	},
 	info: {
 		display: 'flex',
-		flexDirection: 'row',
+		flexDirection: 'column',
 		flexWrap: 'wrap',
 		alignItems: 'center',
 		justifyContent: 'center',
-		paddingTop: height / 5
 	},
 	infoText: {
 		fontSize: width / 16,
@@ -42,10 +43,22 @@ const style = StyleSheet.create({
 		fontWeight: 'bold',
 		color: colors.orange
 	},
+	infoValuePrefix: {
+		alignSelf: 'flex-start'
+	},
+	infoValueWrapper: {
+		position: 'relative',
+		display: 'flex',
+		flexDirection: 'row'
+	},
 	infoValue: {
-		fontSize: width / 5,
-		lineHeight: width / 4.5,
-		marginTop: height / -500,
+		fontSize: width / 6,
+		lineHeight: width / 5.5,
+		marginTop: height / -500
+	},
+	infoValueLabel: {
+		marginTop: height / -60,
+		alignSelf: 'flex-end'
 	}
 })
 
