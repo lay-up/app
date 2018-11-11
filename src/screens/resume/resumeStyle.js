@@ -10,6 +10,9 @@ const style = StyleSheet.create({
 	},
 	sky: { 
 		flex: 0.618,
+	},
+	skyContainer: {
+		height: height * 0.618,
 		alignItems: 'center',
 		justifyContent: 'center'
 	},
@@ -30,10 +33,14 @@ const style = StyleSheet.create({
 	},
 	info: {
 		display: 'flex',
-		flexDirection: 'column',
 		flexWrap: 'wrap',
+		flexDirection: 'row',
 		alignItems: 'center',
-		justifyContent: 'center',
+		justifyContent: 'center'
+	},
+	infoContainer: {
+		display: 'flex',
+		flexDirection: 'column'
 	},
 	infoText: {
 		fontSize: width / 16,
@@ -47,7 +54,6 @@ const style = StyleSheet.create({
 		alignSelf: 'flex-start'
 	},
 	infoValueWrapper: {
-		position: 'relative',
 		display: 'flex',
 		flexDirection: 'row'
 	},
