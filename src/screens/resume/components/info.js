@@ -8,18 +8,13 @@ const Info = props => (
 				<Text style={{ ...style.infoText, ...style.infoBoldText, }}>
 					{ props.name }
 				</Text>
-				<Text style={ style.infoText }>
-					, você ja economizou
+				<Text style={{ ...style.infoText, ...style.infoValueLabel }}>
+					, você já economizou
 				</Text>
 			</Text>
-			<View style={ style.infoValueWrapper }>
-				<Text style={{ ...style.infoValue, ...style.infoBoldText }}>
-					R$ { props.economies.toFixed(2) }
-				</Text>
-				<Text style={{ ...style.infoText, ...style.infoValueLabel  }}>
-					este mês
-				</Text>
-			</View>
+			<Text style={{ ...style.infoValue, ...style.infoBoldText }}>
+				{ props.economies.toFixed(2) }
+			</Text>
 		</View>
 )
 

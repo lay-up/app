@@ -1,9 +1,17 @@
 import { StyleSheet, Dimensions, PixelRatio } from 'react-native'
+import colors from 'values/colors'
 
 const { width, height } = Dimensions.get('window')
 
 const style = StyleSheet.create({
-	header: {
+	resume: {
+		flex: 1,
+		backgroundColor: colors.green
+	},
+	sky: { 
+		flex: 0.618
+	},
+	house: {
 		flex: 0.382,
 		position: 'relative',
 		borderBottomColor: '#333333',
@@ -24,22 +32,20 @@ const style = StyleSheet.create({
 		flexWrap: 'wrap',
 		alignItems: 'center',
 		justifyContent: 'center',
-		paddingVertical: height / 20
+		paddingTop: height / 5
 	},
 	infoText: {
-		fontSize: width / 16
+		fontSize: width / 16,
+		color: colors.white,
 	},
 	infoBoldText: {
-		fontWeight: 'bold'
+		fontWeight: 'bold',
+		color: colors.orange
 	},
 	infoValue: {
-		fontSize: width / 7,
-		lineHeight: width / 6,
-		marginTop: height / -500
-	},
-	infoValueLabel: {
-		marginTop: height / -60,
-		alignSelf: 'flex-end'
+		fontSize: width / 5,
+		lineHeight: width / 4.5,
+		marginTop: height / -500,
 	}
 })
 
