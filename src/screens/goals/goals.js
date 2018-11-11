@@ -3,6 +3,7 @@ import { View, Text, FlatList, ActivityIndicator } from 'react-native'
 import style from './goalsStyle'
 
 import Goal from './components/goal'
+import NewGoalCall from './components/newGoalCall'
 
 import colors from 'values/colors'
 import GoalsService from 'services/goalsService'
@@ -38,6 +39,7 @@ export default class Goals extends React.Component {
 		return (
 			<View style={ style.goals }>
 				<Text style={ style.title }>OBJETIVOS</Text>
+				<NewGoalCall onPress={ this.props.onNewGoalCall } />
 				{ this.getGoals() }
 			</View>
 		)

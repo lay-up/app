@@ -3,12 +3,30 @@ import { ScrollView } from 'react-native'
 
 import Resume from 'resume/resume'
 import Goals from 'goals/goals'
+import NewGoal from 'newGoal/newGoal'
 
-const Home = () => (
-	<ScrollView>
-		<Resume/>
-		<Goals/>
-	</ScrollView>
-)
+export default class Home extends React.Component {
 
-export default Home
+	state = {
+		goalRegisterOpened: false
+	}
+
+	setGoalRegisterOpened(goalRegisterOpened) {
+		this.setState({ goalRegisterOpened }) 
+	}
+
+	render() {
+		return (
+			<ScrollView>
+				<Resume/>
+				<Goals 
+					onNewGoalCall={ () => this.setGoalRegisterOpened(true) }
+				/>
+				<NewGoal 
+					active={ this.state.goalRegisterOpened }
+					onRequestClose={ () => this.setGoalRegisterOpened(false) }
+				/>
+			</ScrollView>
+		)
+	}
+}
