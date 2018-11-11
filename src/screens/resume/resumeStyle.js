@@ -1,15 +1,18 @@
-import { StyleSheet, Dimensions, PixelRatio } from 'react-native'
+import { StyleSheet, Dimensions, PixelRatio, NativeModules, Platform } from 'react-native'
+import { Header } from 'react-navigation'
 import colors from 'values/colors'
 
 const { width, height } = Dimensions.get('window')
 
 const style = StyleSheet.create({
 	resume: {
-		flex: 1,
+		height: height - (
+			Platform.OS === 'ios' ? 20 : NativeModules.StatusBarManager.HEIGHT
+		) - Header.HEIGHT,
 		backgroundColor: colors.green
 	},
 	sky: { 
-		flex: 0.618,
+		flex: 0.618
 	},
 	skyContainer: {
 		height: height * 0.618,
@@ -27,11 +30,12 @@ const style = StyleSheet.create({
 	},
 	house: {
 		position: 'absolute',
-		bottom: -12 / PixelRatio.get(),
+		bottom: 0,
 		width: width,
 		height: height * 0.382
 	},
 	info: {
+		position: 'relative',
 		display: 'flex',
 		flexWrap: 'wrap',
 		flexDirection: 'row',
@@ -65,6 +69,37 @@ const style = StyleSheet.create({
 	infoValueLabel: {
 		marginTop: height / -60,
 		alignSelf: 'flex-end'
+	},
+	borderWrapper: {
+		position: 'relative',
+		display: 'flex',
+		alignItems: 'flex-start',
+		justifyContent: 'center',
+		width: '100%',
+		marginTop: height / 10,
+		height: 2 / PixelRatio.get(),
+	},
+	lastBorder: {
+		backgroundColor: colors.white,
+		height: '100%',
+		width: '50%',
+		alignSelf: 'flex-start'
+	},
+	middleBorder: {
+		backgroundColor: colors.white,
+		height: '100%',
+		width: '100%'
+	},
+	point: {
+		position: 'absolute',
+		left: '50%',
+		width: height / 30,
+		height: height / 30,
+		backgroundColor: colors.white,
+		borderRadius: height / 15,
+		transform: [
+			{ translateX: height / -60 }
+		]
 	}
 })
 

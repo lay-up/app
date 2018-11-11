@@ -2,6 +2,8 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import style from '../resumeStyle'
 
+import MoneyHelper from 'helpers/moneyHelper'
+
 const Info = props => (
 	<View style={ style.info }>
 		<View style={ style.infoContainer }>
@@ -18,7 +20,7 @@ const Info = props => (
 					R$&nbsp;
 				</Text>
 				<Text style={{ ...style.infoValue, ...style.infoBoldText }}>
-					{ props.value.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.') }
+					{ MoneyHelper.formatMoney(props.value) }
 				</Text>
 			</View>
 			<Text style={{ ...style.infoText, ...style.infoValueLabel }}>
@@ -28,6 +30,10 @@ const Info = props => (
 						: `no total`
 				}
 			</Text>
+		</View>
+		<View style={ style.borderWrapper }>
+			<View style={ style.point }/>
+			<View style={ !props.month ? style.lastBorder : style.middleBorder }/>
 		</View>
 	</View>
 )
