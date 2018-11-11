@@ -7,7 +7,7 @@ const Info = props => (
 		<View style={ style.infoContainer }>
 			<Text style={ style.infoValuePrefix }>
 				<Text style={ style.infoText }>
-					Você já
+					Você{ !props.month ? ' já' : '' }
 				</Text>
 				<Text style={{ ...style.infoText, ...style.infoBoldText, }}>
 					&nbsp;economizou
@@ -22,7 +22,11 @@ const Info = props => (
 				</Text>
 			</View>
 			<Text style={{ ...style.infoText, ...style.infoValueLabel }}>
-				no mês de { props.month }
+				{
+					props.month 
+						? `no mês de ${ props.month }`
+						: `no total`
+				}
 			</Text>
 		</View>
 	</View>

@@ -17,9 +17,7 @@ export default class Home extends React.Component {
 	componentDidMount() {
 		ResumeService.getTotals().then(totals => {
 			this.setState({ totals })
-			setTimeout(() => {
-				this.carousel.snapToItem(2)
-			}, 100)
+			setTimeout(() => this.carousel.snapToItem(totals.length - 1), 100)
 		})
 	}
 
