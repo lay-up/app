@@ -1,7 +1,22 @@
 import { StyleSheet, Dimensions, PixelRatio } from 'react-native'
+import colors from 'values/colors'
+
+const { width, height } = Dimensions.get('window')
 
 const style = StyleSheet.create({
-	header: {
+	resume: {
+		flex: 1,
+		backgroundColor: colors.green
+	},
+	sky: { 
+		flex: 0.618,
+	},
+	skyContainer: {
+		height: height * 0.618,
+		alignItems: 'center',
+		justifyContent: 'center'
+	},
+	house: {
 		flex: 0.382,
 		position: 'relative',
 		borderBottomColor: '#333333',
@@ -13,8 +28,43 @@ const style = StyleSheet.create({
 	house: {
 		position: 'absolute',
 		bottom: -12 / PixelRatio.get(),
-		width: Dimensions.get('window').width,
-		height: Dimensions.get('window').height * 0.382
+		width: width,
+		height: height * 0.382
+	},
+	info: {
+		display: 'flex',
+		flexWrap: 'wrap',
+		flexDirection: 'row',
+		alignItems: 'center',
+		justifyContent: 'center'
+	},
+	infoContainer: {
+		display: 'flex',
+		flexDirection: 'column'
+	},
+	infoText: {
+		fontSize: width / 16,
+		color: colors.white,
+	},
+	infoBoldText: {
+		fontWeight: 'bold',
+		color: colors.orange
+	},
+	infoValuePrefix: {
+		alignSelf: 'flex-start'
+	},
+	infoValueWrapper: {
+		display: 'flex',
+		flexDirection: 'row'
+	},
+	infoValue: {
+		fontSize: width / 6,
+		lineHeight: width / 5.5,
+		marginTop: height / -500
+	},
+	infoValueLabel: {
+		marginTop: height / -60,
+		alignSelf: 'flex-end'
 	}
 })
 

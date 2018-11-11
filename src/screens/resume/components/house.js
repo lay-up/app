@@ -2,8 +2,8 @@ import React from 'react'
 import { View, Image, Dimensions } from 'react-native'
 import style from '../resumeStyle'
 
-const Header = props => (
-	<View style={ style.header }>
+const House = props => (
+	<View style={ style.house }>
 		<Image 
 			style={ style.background }
 			width={ Dimensions.get('window').width }
@@ -18,4 +18,4 @@ const Header = props => (
 	</View>
 )
 
-export default Header
+export default House
