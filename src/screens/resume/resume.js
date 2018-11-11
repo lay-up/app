@@ -32,6 +32,7 @@ export default class Home extends React.Component {
 					renderItem={({ item, index }) => <Info { ...item }/> }
 					sliderWidth={ Dimensions.get('window').width }
 					itemWidth={ Dimensions.get('window').width }
+					inactiveSlideScale={ 1 }
 				/>
 			)
 			: (

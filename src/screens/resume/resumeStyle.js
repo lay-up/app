@@ -35,6 +35,7 @@ const style = StyleSheet.create({
 		height: height * 0.382
 	},
 	info: {
+		position: 'relative',
 		display: 'flex',
 		flexWrap: 'wrap',
 		flexDirection: 'row',
@@ -68,6 +69,24 @@ const style = StyleSheet.create({
 	infoValueLabel: {
 		marginTop: height / -60,
 		alignSelf: 'flex-end'
+	},
+	borderWrapper: {
+		display: 'flex',
+		alignItems: 'flex-start',
+		width: '100%',
+		marginTop: height / 35,
+		height: 2 / PixelRatio.get(),
+	},
+	lastBorder: {
+		backgroundColor: colors.white,
+		height: '100%',
+		width: '50%',
+		alignSelf: 'flex-start'
+	},
+	middleBorder: {
+		backgroundColor: colors.white,
+		height: '100%',
+		width: '100%'
 	}
 })
 

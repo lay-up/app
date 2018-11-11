@@ -15,7 +15,7 @@ const getTotals = () => (
 			]
 
 			resolve([...totalPerMonth, EconomiesHelper.getTotalEconomies(totalPerMonth)])
-		}, 3000)
+		}, 500)
 	})
 )
 

@@ -10,7 +10,7 @@ export default createStackNavigator({
 	}
 }, {
 	navigationOptions: {
-		headerTitle: 'Se Poupe',
+		headerTitle: 'se poupe',
 		headerTintColor: colors.white,
 		headerStyle: {
 			backgroundColor: colors.green,
