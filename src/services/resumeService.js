@@ -1,22 +1,10 @@
 import EconomiesHelper from 'helpers/economiesHelper'
+import RequestHelper from 'helpers/requestHelper'
 
 const getTotals = () => (
-	new Promise((resolve, reject) => {
-		setTimeout(() => {
-			let totalPerMonth = [
-				{
-					month: 'setembro',
-					value: 2535.12
-				},
-				{
-					month: 'outubro',
-					value: 3512.12
-				}
-			]
-
-			resolve([...totalPerMonth, EconomiesHelper.getTotalEconomies(totalPerMonth)])
-		}, 500)
-	})
+	RequestHelper.get('/transactions/totals').then(expenses => [
+		...expenses, EconomiesHelper.getTotalEconomies(expenses)
+	])
 )
 
 export default { getTotals }
