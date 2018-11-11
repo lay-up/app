@@ -1,15 +1,18 @@
-import { StyleSheet, Dimensions, PixelRatio } from 'react-native'
+import { StyleSheet, Dimensions, PixelRatio, NativeModules, Platform } from 'react-native'
+import { Header } from 'react-navigation'
 import colors from 'values/colors'
 
 const { width, height } = Dimensions.get('window')
 
 const style = StyleSheet.create({
 	resume: {
-		flex: 1,
+		height: height - (
+			Platform.OS === 'ios' ? 20 : NativeModules.StatusBarManager.HEIGHT
+		) - Header.HEIGHT,
 		backgroundColor: colors.green
 	},
 	sky: { 
-		flex: 0.618,
+		flex: 0.618
 	},
 	skyContainer: {
 		height: height * 0.618,
@@ -27,7 +30,7 @@ const style = StyleSheet.create({
 	},
 	house: {
 		position: 'absolute',
-		bottom: -12 / PixelRatio.get(),
+		bottom: 0,
 		width: width,
 		height: height * 0.382
 	},

@@ -29,9 +29,7 @@ export default class Home extends React.Component {
 					containerCustomStyle={ style.sky }
 					contentContainerCustomStyle={ style.skyContainer }
 					data={ this.state.totals }
-					renderItem={({ item, index }) => (
-						<Info { ...item }/>
-					)}
+					renderItem={({ item, index }) => <Info { ...item }/> }
 					sliderWidth={ Dimensions.get('window').width }
 					itemWidth={ Dimensions.get('window').width }
 				/>
